@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buoy Network</title>
+<link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<aside id="panel">
+  <header>
+    <h1 id="title">Buoy Network</h1>
+    <div id="status" class="muted">Loading…</div>
+  </header>
+
+  <section>
+    <label class="lbl" for="param">Show</label>
+    <select id="param"></select>
+    <div id="depthRow" hidden>
+      <label class="lbl" for="depth">Depth</label>
+      <select id="depth"></select>
+    </div>
+  </section>
+
+  <section>
+    <label class="lbl">Time period</label>
+    <div class="seg" id="range">
+      <button data-r="24h">24 h</button><button data-r="3d">3 d</button><button data-r="7d" class="on">7 d</button><button data-r="30d">30 d</button><button data-r="all">All</button><button data-r="custom">…</button>
+    </div>
+    <div id="customRow" hidden>
+      <input type="datetime-local" id="from"> <span class="muted">to</span> <input type="datetime-local" id="to">
+    </div>
+    <div class="seg small" id="mode">
+      <button data-m="all" class="on">Every reading</button><button data-m="latest">Latest only</button>
+    </div>
+  </section>
+
+  <section>
+    <label class="lbl">Layers</label>
+    <label class="chk"><input type="checkbox" id="lySurface" checked> Heat surface</label>
+    <label class="chk"><input type="checkbox" id="lyPoints" checked> Reading points</label>
+    <label class="chk"><input type="checkbox" id="lyTracks" checked> Drift tracks</label>
+    <label class="chk"><input type="checkbox" id="lyLabels" checked> Buoy names</label>
+    <div class="slider">
+      <span>Heat reach</span><input type="range" id="reach" min="100" max="4000" step="100" value="1200"><span id="reachVal">1.2 km</span>
+    </div>
+  </section>
+
+  <section id="legendBox">
+    <div class="legend-head"><span id="legendTitle"></span>
+      <span class="seg tiny" id="scale"><button data-s="fixed" class="on">Fixed</button><button data-s="auto">Auto</button></span>
+    </div>
+    <div id="ramp"></div>
+    <div class="ramp-labels"><span id="lmin"></span><span id="lmid"></span><span id="lmax"></span></div>
+    <div id="summary" class="muted"></div>
+  </section>
+
+  <section class="grow">
+    <label class="lbl">Buoys</label>
+    <ul id="nodes"></ul>
+  </section>
+
+  <footer>
+    <a id="export" href="#" download>Download data (CSV)</a>
+  </footer>
+</aside>
+<main id="map"></main>
+<button id="panelToggle" aria-label="Show controls">☰</button>
+<script src="/static/vendor/leaflet/leaflet.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

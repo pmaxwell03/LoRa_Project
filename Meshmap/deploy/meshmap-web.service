@@ -1,0 +1,15 @@
+[Unit]
+Description=Buoy network - map web server
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/meshmap
+Environment=MESHMAP_TITLE=Buoy Network
+Environment=MESHMAP_INTERVAL=30
+ExecStart=/usr/bin/python3 server.py --no-browser
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Buoy network - Meshtastic gateway
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/meshmap
+ExecStart=/home/pi/meshmap/.venv/bin/python gateway.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

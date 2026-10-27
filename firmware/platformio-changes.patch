@@ -1,0 +1,21 @@
+diff --git a/platformio.ini b/platformio.ini
+index f4a3df28c..b5ec60c29 100644
+--- a/platformio.ini
++++ b/platformio.ini
+@@ -2,7 +2,7 @@
+ ; https://docs.platformio.org/page/projectconf.html
+ 
+ [platformio]
+-default_envs = heltec-v3
++default_envs = rak4631
+ 
+ extra_configs =
+ 	variants/*/*.ini
+@@ -23,6 +23,7 @@ build_flags =
+ 
+ [env]
+ test_build_src = true
++monitor_dtr = 1
+ extra_scripts =
+ 	pre:bin/platformio-pre.py
+ 	pre:bin/optional-modules.py
