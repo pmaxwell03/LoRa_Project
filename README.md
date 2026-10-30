@@ -15,4 +15,4 @@ firmware: the custom meshtastic device firmware.
   Current device: RAK4631
   Enabled modules: RAK5802 rs485 serial module
 
-  I use the Platform.IO extension in VScode to make changes to the files, build, & upload, the firmware to your RAK4631 module. You can also open a serial monitor to get the raw data off the node.
+  I use the PlatformIO extension in VScode to make changes to the files, build, & upload, the firmware to your RAK4631 module. You can also open a serial monitor to get the raw data off the node.
