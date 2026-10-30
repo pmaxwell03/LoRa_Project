@@ -1,0 +1,7 @@
+The final project is intended to be a LoRa enabled mesh network of water buoys that collect various teypes of data. 
+The final  buoy will integrate a SONDE water sensor measuring ph, turbidity, disolved oxygen etc. A weather sensor
+that measures air tempurate, wind speed, barometric pressure, etc. As well as a tempurate string that measures the 
+water tempuratre throughout the water column providing depth accurate tempurature readings.
+
+This data is stored in a python database that is connecetd to a web app that runs in your browser through localhost.
+The web app allows the user to plot the data using a heatmap and overlays the heatmap on a GPS unabled map.
